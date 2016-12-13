@@ -18,6 +18,10 @@ class Utilisateur extends Model
         return $this->belongsToMany(Reunion::class);
     }
 
+    public function taches() {
+        return $this->belongsToMany(Tache::class);
+    }
+
     public function crCommentaire() {
         return $this->hasMany(CRCommentaire::class);
     }

@@ -13,4 +13,8 @@ class Tache extends Model
     public function commentaires() {
         return $this->hasMany(TCommentaire::class);
     }
+
+    public function utilisateurs() {
+        return $this->belongsToMany(Utilisateur::class);
+    }
 }

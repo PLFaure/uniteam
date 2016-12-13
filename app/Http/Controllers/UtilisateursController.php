@@ -84,6 +84,22 @@ class UtilisateursController extends Controller
      */
     public function update(Utilisateur $utilisateur, Request $request) {
 
+        // Acces aux variables
+        $facebook = $request->input('facebook');
+        $token = $request->input('token');
+        $nom = $request->input('nom');
+        $prenom = $request->input('prenom');
+        $email = $request->input('email');
+
+        // Stockage
+        $utilisateur->facebook = $facebook;
+        $utilisateur->token = $token;
+        $utilisateur->nom = $nom;
+        $utilisateur->prenom = $prenom;
+        $utilisateur->email = $email;
+
+        // Sauvegarde en BD
+        $utilisateur->save();
         return $utilisateur;
     }
 

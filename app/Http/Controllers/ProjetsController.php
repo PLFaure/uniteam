@@ -57,7 +57,7 @@ class ProjetsController extends Controller
         // Acces aux variables
         $nom = $request->input('nom');
         $description = $request->input('description');
-        $utilisateur = $request->input('utilisateur');
+        $utilisateur = Utilisateur::find($request->input('utilisateur'));
 
         // Creation du projet
         $projet = new Projet();
@@ -88,26 +88,19 @@ class ProjetsController extends Controller
         // Acces aux variables
         $nom = $request->input('nom');
         $description = $request->input('description');
-        $utilisateur = $request->input('utilisateur');
+        $utilisateur_id = $request->input('utilisateur');
+        $utilisateur = Utilisateur::find($utilisateur_id);
 
-        // Modification du projet
-        if (isset($nom)) {
-            $projet->nom = $nom;
-        }
-        if (isset($nom)) {
-            $projet->description = $description;
-        }
+        // Edition du projet
+        $projet->nom = $nom;
+        $projet->description = $description;
 
         // Sauvegarde en BD
         $projet->save();
 
-        if (isset($utilisateur)) {
-            $findProjetForUtilisateur = Utilisateur::find($utilisateur)->projets()->find($projet->id);
-            // Si l'utilisateur n'est pas déjà dans la liste
-            if (!isset($findProjetForUtilisateur)) {
-                // Ajout du tuple projet-utilisateur à la table des correspondances
-                $projet->utilisateurs()->attach($utilisateur);
-            }
+        // Ajout du tuple projet-utilisateur à la table des correspondances s'il n'y est pas déjà
+        if (is_null($projet->utilisateurs()->find($utilisateur_id))) {
+            $projet->utilisateurs()->attach($utilisateur);
         }
 
         //TODO ajouter une fonction pour la suppression d'utilisateurs

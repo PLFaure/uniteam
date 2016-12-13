@@ -152,7 +152,7 @@
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/projets/<em>{utilisateur}</em></td>
+                <td>/api/v1/projets/by/<em>{utilisateur}</em></td>
                 <td>Récupérer tous les projets d'un utilisateur</td>
             </tr>
             <tr>
@@ -193,7 +193,7 @@
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/taches/<em>{projet}</em></td>
+                <td>/api/v1/taches/by/<em>{projet}</em></td>
                 <td>Récupérer toutes les tâches d'un projet</td>
             </tr>
             <tr>
@@ -208,7 +208,7 @@
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/taches/<em>{projet}</em></td>
+                <td>/api/v1/taches</td>
                 <td>Créer une tâche pour un projet</td>
             </tr>
             <tr>
@@ -234,7 +234,7 @@
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/reunions/<em>{projet}</em>/<em>{utilisateur}</em></td>
+                <td>/api/v1/reunions/by/<em>{projet}</em>/<em>{utilisateur}</em></td>
                 <td>Récupérer toutes les réunions d'un projet et un utilisateur</td>
             </tr>
             <tr>
@@ -249,7 +249,7 @@
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/reunions/<em>{projet}</em></td>
+                <td>/api/v1/reunions</td>
                 <td>Créer une réunion pour un projet</td>
             </tr>
             <tr>
@@ -275,7 +275,7 @@
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/comptes-rendus/<em>{projet}</em></td>
+                <td>/api/v1/comptes-rendus/by/<em>{projet}</em></td>
                 <td>Récupérer tous les comptes rendus d'un projet</td>
             </tr>
             <tr>
@@ -290,7 +290,7 @@
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/comptes-rendus/<em>{reunion}</em></td>
+                <td>/api/v1/comptes-rendus</td>
                 <td>Créer un compte rendu pour une réunion</td>
             </tr>
             <tr>
@@ -316,17 +316,17 @@
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/commentaires/taches/<em>{tache}</em></td>
+                <td>/api/v1/commentaires/taches/by/<em>{tache}</em></td>
                 <td>Récupérer tous les commentaires d'une tâche</td>
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/commentaires/reunions/<em>{reunion}</em></td>
+                <td>/api/v1/commentaires/reunions/by/<em>{reunion}</em></td>
                 <td>Récupérer tous les commentaires d'une réunion</td>
             </tr>
             <tr>
                 <td>GET</td>
-                <td>/api/v1/commentaires/comptes-rendus/<em>{compte-rendu}</em></td>
+                <td>/api/v1/commentaires/comptes-rendus/by/<em>{compte-rendu}</em></td>
                 <td>Récupérer tous les commentaires d'un compte rendu</td>
             </tr>
             <tr>
@@ -346,17 +346,17 @@
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/commentaires/taches<em>{tache}</em></td>
+                <td>/api/v1/commentaires/taches</td>
                 <td>Créer un commentaire pour une tâche</td>
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/commentaires/reunions<em>{reunion}</em></td>
+                <td>/api/v1/commentaires/reunions</td>
                 <td>Créer un commentaire pour une réunion</td>
             </tr>
             <tr>
                 <td>POST</td>
-                <td>/api/v1/commentaires/comptes-rendus<em>{compte-rendu}</em></td>
+                <td>/api/v1/commentaires/comptes-rendus</td>
                 <td>Créer un commentaire pour un compte rendu</td>
             </tr>
             <tr>
